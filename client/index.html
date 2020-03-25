@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Twilio Client with Contact Picker API</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Twilio Client &amp; Contact Picker API</h1>
+    </header>
+
+    <main>
+      <label for="phone-number">Enter phone number</label>
+      <input type="tel" id="phone-number" name="phone-number" />
+      <button id="dial">Dial</button>
+    </main>
+
+    <footer>
+      <p>
+        Built with 📇 by <a href="https://twitter.com/philnash">philnash</a>
+      </p>
+    </footer>
+
+    <script
+      type="text/javascript"
+      src="https://media.twiliocdn.com/sdk/js/client/releases/1.10.0/twilio.min.js"
+    ></script>
+    <script src="/app.js"></script>
+  </body>
+</html>
