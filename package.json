@@ -1,5 +1,9 @@
 {
   "name": "contact-picker-twilio-client",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/philnash/contact-picker-twilio-client.git"
+  },
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
