@@ -38,7 +38,39 @@ const init = async () => {
     });
   });
 
-  // Contact Picker code goes here.
+  if ("contacts" in navigator && "ContactsManager" in window) {
+    const mainElt = document.getElementsByTagName("main")[0];
+    const contactsBtn = document.createElement("button");
+    contactsBtn.innerText = "Choose contact";
+    contactsBtn.addEventListener("click", async () => {
+      try {
+        const contactProperties = ["name", "tel"];
+        const options = { multiple: false };
+        const contacts = await navigator.contacts.select(
+          contactProperties,
+          options
+        );
+        if (contacts.length > 0) {
+          const contact = contacts[0];
+          const contactNumber = contact.tel.filter(tel => tel.length > 0)[0];
+          const contactName = contact.name.filter(name => name.length > 0)[0];
+          if (contactNumber) {
+            phoneNumInput.value = contactNumber.replace(/\s/g, "");
+            dialBtn.innerText = `Dial ${contactName}`;
+          }
+        }
+      } catch (error) {
+        console.error(error);
+      }
+    });
+    mainElt.appendChild(contactsBtn);
+  } else {
+    const notSupported = document.createElement("p");
+    notSupported.classList.add("error");
+    notSupported.innerText =
+      "Sorry, the contact picker API is not supported in your browser.";
+    dialBtn.insertAdjacentElement("afterend", notSupported);
+  }
 };
 
 window.addEventListener("DOMContentLoaded", init);
