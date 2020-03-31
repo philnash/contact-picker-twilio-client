@@ -37,6 +37,8 @@ const init = async () => {
       }
     });
   });
+
+  // Contact Picker code goes here.
 };
 
 window.addEventListener("DOMContentLoaded", init);
