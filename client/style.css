@@ -70,6 +70,13 @@ main button {
   border-radius: 6px;
 }
 
+.error {
+  background: #f22f46;
+  color: #fff;
+  padding: 1em;
+  border-radius: 6px;
+}
+
 footer {
   background-color: #f4f4f6;
   text-align: center;
