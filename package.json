@@ -14,8 +14,8 @@
   "author": "Phil Nash <philnash@twilio.com> (https://philna.sh)",
   "license": "MIT",
   "dependencies": {
-    "body-parser": "^1.19.0",
-    "express": "^4.17.1",
+    "body-parser": "^1.20.1",
+    "express": "^4.18.2",
     "express-pino-logger": "^4.0.0",
     "pino": "^5.17.0",
     "twilio": "^3.41.1"
